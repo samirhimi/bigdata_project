@@ -15,7 +15,7 @@ RUN python -m pip install --no-cache-dir --user -r requirements.txt
 
 EXPOSE 8080
 
-RUN  python alibaba-trace-ML-Compare.py > data.txt
+RUN  python alibaba-trace-ML-Compare.py > /home/data.txt
 
-CMD [ "python3", "-m", "http.server", "8080", "--directory", "/app"]
+CMD [ "python3", "-m", "http.server", "8080", "--directory", "/home/data.txt"]
 

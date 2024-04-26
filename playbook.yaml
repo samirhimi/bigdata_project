@@ -24,4 +24,4 @@
       command: docker push sami4rhimi/big-data-image
 
     - name: run container from image
-      command: docker run -it --name bigdata -p 8080:8080 --rm sami4rhimi/big-data-image
+      command: docker run -d --name bigdata -p 8080:8080 --rm sami4rhimi/big-data-image
