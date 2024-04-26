@@ -7,6 +7,7 @@
 
     - name: commit changes
       command: git commit -m "refine the code"
+      ignore_errors: true
 
     - name: push changes
       command: git push origin main
