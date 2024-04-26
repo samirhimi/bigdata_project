@@ -1,9 +1,9 @@
 # ignored files in the project 
 
-./app/alibaba-trace-ML-Compare.ipynb
-./app/openb_pod_list_defaultv3.csv
+app/alibaba-trace-ML-Compare.ipynb
+app/openb_pod_list_defaultv3.csv
 .dockerignore
-./app/123.py
+app/123.py
 argo-admin-pass.txt
 
 # Byte-compiled / optimized / DLL files
