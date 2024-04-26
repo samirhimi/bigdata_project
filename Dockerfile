@@ -6,7 +6,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 
 # Create a non-root user
-RUN groupadd -r devops && useradd -r -g devops -m -s /bin/sh devops
+RUN groupadd -r devops && useradd -r -g devops devops
 
 WORKDIR /app
 
@@ -22,7 +22,7 @@ USER  devops
 
 EXPOSE 8080
 
-RUN  python alibaba-trace-ML-Compare.py > /home/devops/data.txt
+RUN  python alibaba-trace-ML-Compare.py > /home/data.txt
 
-CMD [ "python3", "-m", "http.server", "8080", "--directory", "/home/devops/data.txt"]
+CMD [ "python3", "-m", "http.server", "8080", "--directory", "/home/data.txt"]
 
