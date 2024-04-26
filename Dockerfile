@@ -7,6 +7,7 @@ ENV PYTHONDONTWRITEBYTECODE=1
 # Turns off buffering for easier container logging
 ENV PYTHONUNBUFFERED=1
 
+
 # Install pip requirements
 
 WORKDIR /app
@@ -18,8 +19,6 @@ RUN python -m pip install -r --no-cache-dir requirements.txt
 EXPOSE 8080
 
 RUN  python alibaba-trace-ML-Compare.py | tee data.txt
-
-
 
 # CMD [ "python3", "-m", "http.server", "8080"]
 
