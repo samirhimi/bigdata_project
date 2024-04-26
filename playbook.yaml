@@ -1,0 +1,36 @@
+---
+- name: "Build image with ansible"
+  hosts: localhost
+  tasks:
+    - name: add files to git repo
+      command: git add .
+
+    - name: commit changes
+      command: git commit -m "refining the code again"
+
+    - name: push changes
+      command: git push origin main
+      
+    - name: stop running container
+      command: docker stop bigdata
+      ignore_errors: true
+
+    - name: remove stopped container
+      command: docker rm bigdata
+      ignore_errors: true
+
+    - name: remove used image
+      command: docker rmi  sami4rhimi/big-data-image
+      ignore_errors: true
+
+    - name: build docker image from dockerfile
+      command: docker build -t big-data-image  .
+
+    - name: create tag to image
+      command: docker tag big-data-image sami4rhimi/big-data-image
+
+    - name: push image to dockerhub
+      command: docker push sami4rhimi/big-data-image
+
+    - name: run container from image
+      command: docker run -d --name bigdata -p 8080:8080 sami4rhimi/big-data-image
