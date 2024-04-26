@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: alibaba-dep-svc
+spec:
+  selector:
+    app: alibaba-dep
+  ports:
+  - port: 8080
+    targetPort: 8080
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alibaba-dep
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: alibaba-dep
+  template:
+    metadata:
+      labels:
+        app: alibaba-dep
+    spec:
+      containers:
+      - name: alibaba-cont
+        image: ayahyaou/alibaba:latest
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
