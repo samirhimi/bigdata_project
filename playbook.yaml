@@ -6,7 +6,7 @@
       command: git add .
 
     - name: commit changes
-      command: git commit -m "refining the code again"
+      command: git commit -m "refine the code"
 
     - name: push changes
       command: git push origin main
