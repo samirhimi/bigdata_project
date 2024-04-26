@@ -6,23 +6,26 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 
 # Create a non-root user
-RUN groupadd -r devops && useradd -r -g devops devops
+RUN groupadd -r devops && useradd -r -g devops -m devops
 
-WORKDIR /app
+WORKDIR /home/devops/app
 
-RUN chown -R devops:devops /app
+RUN chown -R devops:devops /home/devops/app
 
 COPY ./app .
 
 # Install pip requirements
 
-RUN python -m pip install --no-cache-dir --user -r requirements.txt 
+RUN python -m pip install --no-cache-dir pandas -r requirements.txt &&  \
+    python -m pip install --no-cache-dir pandas
 
 USER  devops
 
 EXPOSE 8080
 
-RUN  python alibaba-trace-ML-Compare.py > /home/data.txt
+RUN  python alibaba-trace-ML-Compare.py > /home/devops/data.txt
 
-CMD [ "python3", "-m", "http.server", "8080", "--directory", "/home/data.txt"]
+WORKDIR /home/devops/
+
+CMD [ "python3", "-m", "http.server", "8080"]
 
