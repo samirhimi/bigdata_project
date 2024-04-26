@@ -6,9 +6,9 @@
       command: docker stop bigdata-cont
       ignore_errors: true
 
-    - name: remove stopped container
-      command: docker rm bigdata-cont
-      ignore_errors: true
+    # - name: remove stopped container
+    #   command: docker rm bigdata-cont
+    #   ignore_errors: true
 
     - name: remove used image
       command: docker rmi  sami4rhimi/big-data-image

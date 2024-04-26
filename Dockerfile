@@ -6,7 +6,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 
 # Create a non-root user
-RUN groupadd -r devops && useradd -r -g devops devops
+RUN groupadd -r devops && useradd -r -g devops -m -s /bin/sh devops
 
 WORKDIR /app
 
