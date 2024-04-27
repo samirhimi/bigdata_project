@@ -5,6 +5,8 @@ app/openb_pod_list_defaultv3.csv
 .dockerignore
 app/123.py
 argo-admin-pass.txt
+k8s_manifests/statefulset.yaml
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
