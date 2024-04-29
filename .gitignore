@@ -6,7 +6,7 @@ app/openb_pod_list_defaultv3.csv
 app/123.py
 argo-admin-pass.txt
 k8s_manifests/sc.yaml
-
+statefulset_pgprom.yaml
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
