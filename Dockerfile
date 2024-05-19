@@ -35,4 +35,4 @@ EXPOSE 8081
 
 WORKDIR /home/devops/app/
 
-CMD [ "python3", "-m", "http.server", "8080"]
+CMD [ "python3", "-m", "http.server", "8081"]
