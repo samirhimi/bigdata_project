@@ -12,7 +12,8 @@ pipeline {
         }
         stage('Build & push Dockerfile') {
             steps {
-              sh " ansible-playbook playbook.yml"
+              sh " cd bigdata_project "
+              sh " ansible-playbook playbook.yml "
             }
         }
     }
