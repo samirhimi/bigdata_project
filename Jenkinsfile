@@ -11,10 +11,13 @@ pipeline {
             }
         }
         stage ('Clone') {
-            git 'https://github.com/samirhimi/bigdata_project.git'
+            steps {
+            sh "git clone https://github.com/samirhimi/bigdata_project.git"
+           }
         }
         stage('Build & push Docker image') {
             steps {
+              sh " cd bigdata_project/ "
               sh " ansible-playbook playbook.yml "
             }
         }
