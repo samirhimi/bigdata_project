@@ -1,7 +1,6 @@
 # ignored files in the project 
 
 app/alibaba-trace-ML-Compare.ipynb
-app/openb_pod_list_defaultv3.csv
 .dockerignore
 app/123.py
 argo-admin-pass.txt
