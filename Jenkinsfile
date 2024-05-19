@@ -10,9 +10,8 @@ pipeline {
               sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
             }
         }
-        stage('Build & push Dockerfile') {
+        stage('Build & push Docker image') {
             steps {
-              sh " cd bigdata_project/ "
               sh " ansible-playbook playbook.yml "
             }
         }
