@@ -31,7 +31,7 @@ COPY --from=builder /app/data.txt /home/devops/app/data.txt
 
 USER  devops
 
-EXPOSE 8080
+EXPOSE 8081
 
 WORKDIR /home/devops/app/
 
