@@ -86,7 +86,8 @@ spec:
       name: data
     spec:
       accessModes: [ "ReadWriteOnce" ]
-      storageClassName: "directpv-min-io"
+      #storageClassName: "directpv-min-io"
+      storageClassName: "default"
       resources:
         requests:
           storage: 300Mi
