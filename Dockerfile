@@ -1,6 +1,6 @@
 # For more information, please refer to https://aka.ms/vscode-docker-python
-FROM python:3.12-slim AS builder 
-
+#FROM python:3.12-slim AS builder 
+FROM python:alpine AS builder 
 # Keeps Python from generating .pyc files in the container
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
@@ -20,7 +20,8 @@ RUN python -m pip install --no-cache-dir -r requirements.txt &&  \
 
 RUN  python alibaba-trace-ML-Compare.py > /app/data.txt
 
-FROM python:3.12-slim 
+#FROM python:3.12-slim 
+FROM python:alpine
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
