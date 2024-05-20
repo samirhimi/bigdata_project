@@ -17,7 +17,7 @@ pipeline {
         }
         stage('scan Docker image') {
             steps {
-              sh " trivy image --severity CRITICAL  sami4rhimi/big-data-image:latest"
+              sh " trivy image --no-progress --severity CRITICAL  sami4rhimi/big-data-image:latest"
             }
         }
     }
