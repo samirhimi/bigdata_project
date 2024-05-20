@@ -26,8 +26,8 @@ FROM python:alpine
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 
-RUN groupadd -r devops && useradd -r -g devops -m devops
-
+#RUN groupadd -r devops && useradd -r -g devops -m devops
+RUN useradd -r -g devops -m devops
 COPY --from=builder /app/data.txt /home/devops/app/data.txt
 
 USER  devops
