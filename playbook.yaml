@@ -3,7 +3,7 @@
   hosts: localhost
   tasks:  
 
-    - name: remove stopped container
+    - name: remove container
       command: docker rm --force bigdata-cont
       ignore_errors: true
 
