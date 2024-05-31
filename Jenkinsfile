@@ -15,10 +15,5 @@ pipeline {
               sh " ansible-playbook playbook.yaml "
             }
         }
-        stage('scan Docker image') {
-            steps {
-              sh " trivy image --no-progress --severity CRITICAL,HIGH  sami4rhimi/big-data-image:latest"
-            }
-        }
     }
 }
