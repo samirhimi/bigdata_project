@@ -13,5 +13,8 @@
     - name: create tag to image
       command: docker tag big-data-image sami4rhimi/big-data-image
 
+    - name: scan image
+      command: trivy image --severity CRITICAL sami4rhimi/big-data-image
+
     - name: push image to dockerhub
       command: docker push sami4rhimi/big-data-image
