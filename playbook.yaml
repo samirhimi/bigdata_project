@@ -3,10 +3,6 @@
   hosts: localhost
   tasks:  
 
-    - name: remove container
-      command: docker rm --force bigdata-cont
-      ignore_errors: true
-
     - name: remove used image
       command: docker rmi  sami4rhimi/big-data-image
       ignore_errors: true
@@ -19,6 +15,3 @@
 
     - name: push image to dockerhub
       command: docker push sami4rhimi/big-data-image
-
-    - name: run container from image
-      command: docker run -d --name bigdata-cont -p 8081:8081 --rm sami4rhimi/big-data-image
